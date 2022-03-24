@@ -1,1 +1,2 @@
 ﻿# recoding
+Algorithmic Aesthetics project

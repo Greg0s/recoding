@@ -1,12 +1,12 @@
 var gui = new dat.GUI();
 var params = {
     Number_of_lines: 19,
-    Number_of_columns: 13,
+    Number_of_columns: 14,
     Random_seed: 1,
     Download_Image: function () { return save(); },
 };
-gui.add(params, "Number_of_lines", 0, 100, 1);
-gui.add(params, "Number_of_columns", 0, 100, 1);
+gui.add(params, "Number_of_lines", 1, 100, 1);
+gui.add(params, "Number_of_columns", 1, 100, 1);
 gui.add(params, "Random_seed", 0, 100, 1);
 gui.add(params, "Download_Image");
 function draw() {
@@ -18,8 +18,8 @@ function draw() {
     var nbLines = params.Number_of_lines;
     var y_draw, x_draw;
     var firstLoop;
-    for (var x = 1; x < nbColumns; x++) {
-        for (var y = 1; y < nbLines; y++) {
+    for (var x = 0; x < nbColumns; x++) {
+        for (var y = 0; y < nbLines; y++) {
             firstLoop = 0;
             beginShape();
             for (var k = 1; k < 23; k++) {
@@ -37,7 +37,7 @@ function draw() {
                 vertex(x_draw, y_draw);
             }
             vertex(x_draw_start, y_draw_start);
-            endShape(closed);
+            endShape();
         }
     }
 }

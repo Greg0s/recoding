@@ -18,12 +18,17 @@ function draw() {
     strokeWeight(1);
     var y_draw, x_draw;
     var firstLoop;
+    var changed = 0;
     for (var x = 0; x < params.Number_of_columns; x++) {
         for (var y = 0; y < params.Number_of_lines; y++) {
             firstLoop = 0;
             beginShape();
             for (var k = 1; k <= params.Number_of_vertices; k++) {
-                if (k % 2 == 0) {
+                if (k == 1) {
+                    x_draw = random((x + 0.75) * (width / params.Number_of_columns), (x) * (width / params.Number_of_columns));
+                    y_draw = random((y + 0.75) * (height / params.Number_of_lines), (y) * (height / params.Number_of_lines));
+                }
+                else if (k % 2 == 0) {
                     x_draw = random((x + 0.75) * (width / params.Number_of_columns), (x) * (width / params.Number_of_columns));
                 }
                 else {

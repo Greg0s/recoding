@@ -29,17 +29,24 @@ function draw() {
 
   let y_draw, x_draw;
   let firstLoop;
+  let changed = 0;
+
   for(let x = 0 ; x < params.Number_of_columns ; x++){//nb of lines
     for(let y = 0 ; y < params.Number_of_lines ; y++){//nb of columns
-     
+
       firstLoop = 0;
       beginShape();
+      
       for(let k = 1; k <= params.Number_of_vertices; k++){//number of segments of each draw
-        if(k%2 == 0){
+        if(k==1){
+          x_draw = random((x + 0.75) * (width / params.Number_of_columns), (x) * (width/params.Number_of_columns));
+          y_draw = random((y + 0.75) * (height / params.Number_of_lines), (y) * (height /params.Number_of_lines));
+        }else if(k%2 == 0){
           x_draw = random((x + 0.75) * (width / params.Number_of_columns), (x) * (width/params.Number_of_columns));
         }else{
           y_draw = random((y + 0.75) * (height / params.Number_of_lines), (y) * (height /params.Number_of_lines));
         }
+       
         if(firstLoop == 0){
           x_draw_start = x_draw;
           y_draw_start = y_draw;
@@ -48,7 +55,6 @@ function draw() {
       vertex(x_draw, y_draw);
       }
       vertex(x_draw_start, y_draw_start);
-      
       endShape()
     }
   }

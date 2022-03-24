@@ -64,10 +64,6 @@ function draw() {
 //    Initialization
 // -------------------
 
-function menu(){
-
-}
-
 function setup() {
     p6_CreateCanvas();
 }

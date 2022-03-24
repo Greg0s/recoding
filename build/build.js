@@ -46,15 +46,13 @@ function draw() {
         }
     }
 }
-function menu() {
-}
 function setup() {
     p6_CreateCanvas();
 }
 function windowResized() {
     p6_ResizeCanvas();
 }
-var __ASPECT_RATIO = 1;
+var __ASPECT_RATIO = 0.70710678118;
 var __MARGIN_SIZE = 25;
 function __desiredCanvasWidth() {
     var windowRatio = windowWidth / windowHeight;
